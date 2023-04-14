@@ -19,6 +19,8 @@ public class Gerenciador {
 	public static void menu() {
 
         System.out.println("                                                      ");
+        System.out.println("                                                      ");
+        System.out.println("                                                      ");
         System.out.println("   Bem vindos ao Sistema de Gerenciamento de Cripto   ");
         System.out.println("                                                      ");
         System.out.println("               Selecione uma das Opções               ");
