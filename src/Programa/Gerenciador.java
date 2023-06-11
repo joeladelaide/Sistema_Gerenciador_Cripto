@@ -15,6 +15,7 @@ public class Gerenciador {
         menu();
 	}
 
+    // Função para criar um atraso de tempo 
     public static void tempo(int tempo){
         
         try {
@@ -26,11 +27,13 @@ public class Gerenciador {
         
     }
 
+    // Função para limpar a tela do console
     public static void limparTela(){
 
         System.out.print("\033c");
     }
 
+    // Função para imprimir a tela inicial com informações do projeto e equipe
     public static void printInicial(){
         
         limparTela();
@@ -59,7 +62,8 @@ public class Gerenciador {
         tempo(1000);
         
     }
-    
+
+    // Função para exibir o menu principal e solicitar uma opção ao usuário
 	public static void menu() {
 
         limparTela();
@@ -103,6 +107,7 @@ public class Gerenciador {
         }
     }
 	
+    // Função para cadastrar uma nova criptomoeda
 	public static void cadastrar(){
 
         limparTela();
@@ -137,7 +142,8 @@ public class Gerenciador {
         menu();
 
     }
-	
+
+	 // Função para encontrar um criptoativo com base no seu ID
 	private static Criptoativo encontrarCriptoativo(int idCriptoativo) {
         Criptoativo criptoativo  = null;
         if(criptoativos.size() > 0) {
@@ -150,6 +156,7 @@ public class Gerenciador {
         return criptoativo;
     }
 
+    // Função para realizar um depósito em um criptoativo
     public static void depositar() {
 
         limparTela();
@@ -188,6 +195,7 @@ public class Gerenciador {
 
     }
 
+    // Função para realizar um saque de um criptoativo
     public static void sacar() {
 
         limparTela();
@@ -227,7 +235,7 @@ public class Gerenciador {
 
     }
    
-
+    // Função para realizar um saque de um criptoativo
     public static void listar() {
         if(criptoativos.size() > 0) {
             limparTela();
