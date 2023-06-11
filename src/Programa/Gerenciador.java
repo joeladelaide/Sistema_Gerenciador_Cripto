@@ -123,9 +123,10 @@ public class Gerenciador {
         System.out.println("\nExchange: ");
         String exchange = input.next();
 
+
         Criptomoeda criptomoeda = new Criptomoeda(nome, sigla, exchange);
         
-        Criptoativo  criptoativo = new Criptoativo(criptomoeda); 
+        Criptoativo  criptoativo = new Criptoativo(criptomoeda, nome, sigla, exchange); 
         
         criptoativos.add(criptoativo);
 

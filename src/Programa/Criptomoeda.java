@@ -9,7 +9,7 @@ public class Criptomoeda {
 	private String sigla;
 	private String exchange;
 	
-	public Criptomoeda(String nome, String sigla, String exchange) {
+	public Criptomoeda( String nome, String sigla, String exchange  ) {
 		this.idCriptomoeda = contador;
 		this.nome = nome;
 		this.sigla = sigla;
