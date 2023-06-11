@@ -1,6 +1,5 @@
 package Programa;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -78,7 +77,7 @@ public class Gerenciador {
         
         criptoativos.add(criptoativo);
 
-        System.out.println("Conta cadastrada com sucesso!");
+        System.out.println("Criptomoeda cadastrada com sucesso!");
         
         menu();
 
