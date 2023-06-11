@@ -64,8 +64,6 @@ public class Gerenciador {
     
 	public static void menu() {
 
-        limparTela();
-
         System.out.println("                                                      ");
         System.out.println("                                                      ");
         System.out.println("                                                      ");
