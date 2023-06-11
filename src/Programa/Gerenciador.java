@@ -13,8 +13,6 @@ public class Gerenciador {
 		criptoativos = new ArrayList<Criptoativo>();
 		printInicial();
         menu();
-        
-
 	}
 
     public static void tempo(int tempo){
@@ -23,7 +21,7 @@ public class Gerenciador {
             Thread.sleep(tempo);
         }
         catch (InterruptedException e) {
-            System.out.println("Erro no método Sleep");
+            System.out.println("Erro na Thread Sleep()");
         }
         
     }
@@ -64,13 +62,10 @@ public class Gerenciador {
     
 	public static void menu() {
 
-        System.out.println("                                                      ");
-        System.out.println("                                                      ");
-        System.out.println("                                                      ");
-        System.out.println("   Bem vindo ao Sistema de Gerenciamento de Cripto   ");
-        System.out.println("                                                      ");
-        System.out.println("               Selecione uma das Opções               ");
-        System.out.println("                                                      ");
+        limparTela();
+
+        System.out.println("\n\n                  CARTEIRA DIGITAL   \n");
+        System.out.println("               Selecione uma das Opções               \n");
         System.out.println("         |   Opção 1 - Cadastrar Cripto   |");
         System.out.println("         |   Opção 2 - Depositar Cripto   |");
         System.out.println("         |   Opção 3 - Sacar Cripto       |");
@@ -112,7 +107,7 @@ public class Gerenciador {
 
         limparTela();
 
-        System.out.println("CADASTRO DE CRIPTOMOEDAS: \n");
+        System.out.println("\n\n                  CADASTRO DE CRIPTOMOEDAS   \n");
 
         System.out.println("\nNome: ");
         String nome = input.next();
@@ -123,16 +118,22 @@ public class Gerenciador {
         System.out.println("\nExchange: ");
         String exchange = input.next();
 
+        try {
+            Criptomoeda criptomoeda = new Criptomoeda(nome, sigla, exchange);
+            Criptoativo  criptoativo = new Criptoativo(criptomoeda, nome, sigla, exchange); 
+            criptoativos.add(criptoativo);
 
-        Criptomoeda criptomoeda = new Criptomoeda(nome, sigla, exchange);
-        
-        Criptoativo  criptoativo = new Criptoativo(criptomoeda, nome, sigla, exchange); 
-        
-        criptoativos.add(criptoativo);
+            limparTela();
+            System.out.println("Cadastro realizado com SUCESSO!");
+            tempo(2000);
+        }
+        catch (Exception e) {
 
-        limparTela();
-        System.out.println("Criptomoeda cadastrada com sucesso...");
-        
+            limparTela();
+            System.out.println("Erro ao realizar o cadastro!");
+            tempo(2000);
+        }
+
         menu();
 
     }
@@ -151,19 +152,36 @@ public class Gerenciador {
 
     public static void depositar() {
 
-        System.out.println("DEPÓSITO DE CRIPTOMOEDAS: \n");
+        limparTela();
 
-        System.out.println("Número do id: ");
+        System.out.println("\n\n                  DEPÓSITO DE CRIPTOMOEDAS   \n");
+
+        System.out.println("Insira o Número do ID: ");
         int idCriptoativo = input.nextInt();
         Criptoativo criptoativo = encontrarCriptoativo(idCriptoativo); 
 
         if(criptoativo != null) {
-            System.out.println("Qual a quantidade de criptomoedas que deseja depositar? ");
-            Double valorDeposito = input.nextDouble();
+
+            try {
+                System.out.println("Qual a quantidade de " + criptoativo.getNome() + " que deseja depositar ? ");
+                Double valorDeposito = input.nextDouble();
             
-            criptoativo.depositar(valorDeposito);
+                criptoativo.depositar(valorDeposito);
+
+                limparTela();
+                System.out.println("Depósito realizado com SUCESSO!");
+                tempo(2000);
+            }
+            catch (Exception e) {
+
+                limparTela();
+                System.out.println("Erro ao realizar o depósito!");
+                tempo(2000);
+            }
         }else {
-            System.out.println("Conta não encontrada!");
+            limparTela();
+            System.out.println("Criptomoeda não encontrada!");
+            tempo(2000);
         }
 
         menu();
@@ -172,21 +190,37 @@ public class Gerenciador {
 
     public static void sacar() {
 
-        System.out.println("SAQUE DE CRIPTOMOEDAS: \n");
+        limparTela();
 
-        System.out.println("Número do id: ");
+        System.out.println("\n\n                  SAQUE DE CRIPTOMOEDAS   \n");
+
+        System.out.println("Insira o Número do ID: ");
         int id = input.nextInt();
         
         Criptoativo criptoativo = encontrarCriptoativo(id);
 
         if(criptoativo != null) {
-            System.out.println("Qual a quantidade de criptomoedas que deseja sacar? ");
-            Double valorSaque = input.nextDouble();
+            try {
+                System.out.println("Qual a quantidade de " + criptoativo.getNome() + " que deseja sacar ? ");
+                Double valorSaque = input.nextDouble();
+            
+                criptoativo.sacar(valorSaque);
 
-            criptoativo.sacar(valorSaque);
-            System.out.println("Saque realizado com sucesso!");
+                limparTela();
+                System.out.println("Saque realizado com SUCESSO!");
+                tempo(2000);
+            }
+            catch (Exception e) {
+
+                limparTela();
+                System.out.println("Erro ao realizar o depósito!");
+                tempo(2000);
+            }
+
         }else {
-            System.out.println("Conta não encontrada!");
+            limparTela();
+            System.out.println("Criptomoeda não encontrada!");
+            tempo(2000);
         }
 
         menu();
@@ -196,16 +230,20 @@ public class Gerenciador {
 
     public static void listar() {
         if(criptoativos.size() > 0) {
+            limparTela();
             for(Criptoativo cripto: criptoativos) {
                 System.out.println(cripto);
             }
         }else {
-            System.out.println("Não há contas cadastradas! ");
+            limparTela();
+            System.out.println("Não há criptomoedas cadastradas! ");
+            tempo(2000);
         }
+
+        input.nextLine();
+        input.nextLine();
         
         menu();
     }
-    
-   
 
 }
