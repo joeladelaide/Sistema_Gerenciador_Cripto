@@ -16,25 +16,37 @@ public class Criptomoeda {
 		this.exchange = exchange;
 		contador += 1;
 	}
+
+	// Getter para obter o nome da criptomoeda
 	public String getNome() {
 		return nome;
 	}
+
+	// Setter para definir o nome da criptomoeda
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	// Getter para obter a sigla da criptomoeda
 	public String getSigla() {
 		return sigla;
 	}
+
+	// Setter para definir a sigla da criptomoeda
 	public void setSigla(String sigla) {
 		this.sigla = sigla;
 	}
+	// Getter para obter a exchange da criptomoeda
 	public String getExchange() {
 		return exchange;
 	}
+
+	// Setter para definir a exchange da criptomoeda
 	public void setExchange(String exchange) {
 		this.exchange = exchange;
 	}
 	
+	// Sobrescrita do método toString() para retornar as informações da criptomoeda
 	public String toString() {
 		return  "\nNome: " + this.getNome() +
 				"\nSigla: " + this.getSigla() +
