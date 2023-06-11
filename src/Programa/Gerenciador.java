@@ -11,13 +11,55 @@ public class Gerenciador {
 	public static void main(String[] args) {
 		
 		criptoativos = new ArrayList<Criptoativo>();
-		menu();
+		printInicial();
+        menu();
+        
 
 	}
+
+    public static void tempo(int tempo){
+        
+        try {
+            Thread.sleep(tempo);
+        }
+        catch (InterruptedException e) {
+            System.out.println("Erro no método Sleep");
+        }
+        
+    }
 
     public static void limparTela(){
 
         System.out.print("\033c");
+    }
+
+    public static void printInicial(){
+        
+        limparTela();
+
+        System.out.println("                                                      ");
+        System.out.println("        CENTRO UNIVERSITÁRIO DE JOÃO PESSOA - UNIPÊ        ");
+        tempo(1000);
+        System.out.println("                   CIÊNCIAS DA COMPUTAÇÃO                  ");
+        tempo(1000);
+        System.out.println("       PROJETO FINAL - PROGRAMAÇÃO ORIENTADA A OBJETO\n");
+        tempo(1000);
+
+        System.out.println("   EQUIPE:        ");
+        tempo(1000);
+        System.out.println("     - Ayrton Marcos Rodrigues Delfino - RGM 30858569");
+        tempo(1000);
+        System.out.println("     - Joel Adelaide Medeiros - RGM 29799384");
+        tempo(1000);
+        System.out.println("     - Juliana Chacon - RGM 29677467");
+        tempo(1000);
+        System.out.println("     - Marcos Barbosa Vieira Filho - RGM 30174503");
+        tempo(1000);
+        System.out.println("     - Rian Lucas Gomes Candido - RGM 30632722");
+        tempo(1000);
+        System.out.println("     - Thiago Emanuel ferreira de paiva - RGM 29510678");
+        tempo(1000);
+        
     }
     
 	public static void menu() {
