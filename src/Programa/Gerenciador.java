@@ -33,6 +33,12 @@ public class Gerenciador {
         System.out.print("\033c");
     }
 
+    public static void aguardarUsuario(){
+
+        input.nextLine();
+        input.nextLine();
+    }
+
     // Função para imprimir a tela inicial com informações do projeto e equipe
     public static void printInicial(){
         
@@ -97,11 +103,11 @@ public class Gerenciador {
                 break;
 
             case 5:
-                System.out.println("Saindo do Sistema...");
+                System.out.println("\n\nSaindo do Sistema...");
                 System.exit(0); 
 
             default:
-                System.out.println("Opção inválida!");
+                System.out.println("\n\nOpção inválida!");
                 menu();
                 break;
         }
@@ -129,14 +135,14 @@ public class Gerenciador {
             criptoativos.add(criptoativo);
 
             limparTela();
-            System.out.println("Cadastro realizado com SUCESSO!");
-            tempo(2000);
+            System.out.println("\n\nCadastro realizado com SUCESSO!");
+            aguardarUsuario();
         }
         catch (Exception e) {
 
             limparTela();
-            System.out.println("Erro ao realizar o cadastro!");
-            tempo(2000);
+            System.out.println("\n\nErro ao realizar o cadastro!");
+            aguardarUsuario();
         }
 
         menu();
@@ -176,19 +182,19 @@ public class Gerenciador {
                 criptoativo.depositar(valorDeposito);
 
                 limparTela();
-                System.out.println("Depósito realizado com SUCESSO!");
-                tempo(2000);
+                System.out.println("\n\nDepósito realizado com SUCESSO!");
+                aguardarUsuario();
             }
             catch (Exception e) {
 
                 limparTela();
-                System.out.println("Erro ao realizar o depósito!");
-                tempo(2000);
+                System.out.println("\n\nErro ao realizar o depósito!");
+                aguardarUsuario();
             }
         }else {
             limparTela();
-            System.out.println("Criptomoeda não encontrada!");
-            tempo(2000);
+            System.out.println("\n\nCriptomoeda não encontrada!");
+            aguardarUsuario();
         }
 
         menu();
@@ -215,20 +221,20 @@ public class Gerenciador {
                 criptoativo.sacar(valorSaque);
 
                 limparTela();
-                System.out.println("Saque realizado com SUCESSO!");
-                tempo(2000);
+                System.out.println("\n\nSaque realizado com SUCESSO!");
+                aguardarUsuario();
             }
             catch (Exception e) {
 
                 limparTela();
-                System.out.println("Erro ao realizar o depósito!");
-                tempo(2000);
+                System.out.println("\n\nErro ao realizar o saque!");
+                aguardarUsuario();
             }
 
         }else {
             limparTela();
-            System.out.println("Criptomoeda não encontrada!");
-            tempo(2000);
+            System.out.println("\n\nCriptomoeda não encontrada!");
+            aguardarUsuario();
         }
 
         menu();
@@ -244,12 +250,11 @@ public class Gerenciador {
             }
         }else {
             limparTela();
-            System.out.println("Não há criptomoedas cadastradas! ");
+            System.out.println("\n\nNão há criptomoedas cadastradas! ");
             tempo(2000);
         }
 
-        input.nextLine();
-        input.nextLine();
+        aguardarUsuario();
         
         menu();
     }
