@@ -14,6 +14,7 @@ public class Criptoativo extends Criptomoeda {
 		this.criptomoeda = criptomoeda;
 		contador += 1;
 	}
+	
 	// Getter para obter o identificador da criptomoeda
 	public int getIdCriptoativo() {
 		return idCriptoativo;
@@ -22,18 +23,22 @@ public class Criptoativo extends Criptomoeda {
 	public void setIdCriptoativo(int idCriptoativo) {
 		this.idCriptoativo = idCriptoativo;
 	}
+
 	// Getter para obter a criptomoeda associada ao criptoativo
 	public Criptomoeda getCriptomoeda() {
 		return criptomoeda;
 	}
+
 	// Setter para definir a criptomoeda associada ao criptoativo
 	public void setCriptomoeda(Criptomoeda criptomoeda) {
 		this.criptomoeda = criptomoeda;
 	}
+
 	// Getter para obter a quantidade do criptoativo
 	public Double getQuantidade() {
 		return quantidade;
 	}
+
 	// Setter para definir a quantidade do criptoativo
 	public void setQuantidade(Double quantidade) {
 		this.quantidade = quantidade;
@@ -45,6 +50,7 @@ public class Criptoativo extends Criptomoeda {
 				"\nExchange: " + this.criptomoeda.getExchange() +
 				"\nSaldo: " + this.getQuantidade();
 	}
+
 	// Realiza um depósito na quantidade do criptoativo
     public void depositar(Double valor) {
         if(valor > 0) {
@@ -54,6 +60,7 @@ public class Criptoativo extends Criptomoeda {
             System.out.println("Não foi possível realizar o depósito!");
         }
     }
+
 	// Realiza um saque na quantidade do criptoativo
     public void sacar(Double valor) {
         if(valor > 0 && this.getQuantidade() >= valor) {
