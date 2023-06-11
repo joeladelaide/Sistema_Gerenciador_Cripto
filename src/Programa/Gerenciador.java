@@ -69,7 +69,7 @@ public class Gerenciador {
         System.out.println("                                                      ");
         System.out.println("                                                      ");
         System.out.println("                                                      ");
-        System.out.println("   Bem vindos ao Sistema de Gerenciamento de Cripto   ");
+        System.out.println("   Bem vindo ao Sistema de Gerenciamento de Cripto   ");
         System.out.println("                                                      ");
         System.out.println("               Selecione uma das Opções               ");
         System.out.println("                                                      ");
@@ -77,9 +77,10 @@ public class Gerenciador {
         System.out.println("         |   Opção 2 - Depositar Cripto   |");
         System.out.println("         |   Opção 3 - Sacar Cripto       |");
         System.out.println("         |   Opção 4 - Extrato            |");
-        System.out.println("         |   Opção 5 - Sair               |");
+        System.out.println("         |   Opção 5 - Sair               |\n");
+        System.out.println("Opção: ");
 
-        int opcao = input.nextInt();;
+        int opcao = input.nextInt();
 
         switch (opcao) {
             case 1:
@@ -111,22 +112,27 @@ public class Gerenciador {
 	
 	public static void cadastrar(){
 
+        limparTela();
+
+        System.out.println("CADASTRO DE CRIPTOMOEDAS: \n");
+
         System.out.println("\nNome: ");
         String nome = input.next();
 
         System.out.println("\nSigla: ");
         String sigla = input.next();
 
-        System.out.println("Exchange: ");
+        System.out.println("\nExchange: ");
         String exchange = input.next();
-        
+
         Criptomoeda criptomoeda = new Criptomoeda(nome, sigla, exchange);
         
         Criptoativo  criptoativo = new Criptoativo(criptomoeda); 
         
         criptoativos.add(criptoativo);
 
-        System.out.println("Criptomoeda cadastrada com sucesso!");
+        limparTela();
+        System.out.println("Criptomoeda cadastrada com sucesso...");
         
         menu();
 
@@ -145,6 +151,9 @@ public class Gerenciador {
     }
 
     public static void depositar() {
+
+        System.out.println("DEPÓSITO DE CRIPTOMOEDAS: \n");
+
         System.out.println("Número do id: ");
         int idCriptoativo = input.nextInt();
         Criptoativo criptoativo = encontrarCriptoativo(idCriptoativo); 
@@ -163,6 +172,9 @@ public class Gerenciador {
     }
 
     public static void sacar() {
+
+        System.out.println("SAQUE DE CRIPTOMOEDAS: \n");
+
         System.out.println("Número do id: ");
         int id = input.nextInt();
         
