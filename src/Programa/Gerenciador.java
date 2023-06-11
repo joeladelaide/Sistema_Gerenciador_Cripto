@@ -14,8 +14,15 @@ public class Gerenciador {
 		menu();
 
 	}
-	
+
+    public static void limparTela(){
+
+        System.out.print("\033c");
+    }
+    
 	public static void menu() {
+
+        limparTela();
 
         System.out.println("                                                      ");
         System.out.println("                                                      ");
@@ -132,7 +139,6 @@ public class Gerenciador {
         menu();
 
     }
-
    
 
     public static void listar() {
